@@ -10,6 +10,8 @@ export default class Service {
 
     constructor() {
         this.api = new Api();
+        this.checker = new Checker();
+        this.converter = new Converter();
     }
 
     applyRule(rule: String) {
