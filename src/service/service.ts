@@ -1,6 +1,7 @@
 import Api from '../api/api';
-import Checker from '../validation/checker';
-import Converter from './converter';
+import Checker from '../validation/Checker';
+import Converter from './Converter';
+import BadSyntaxException from '../error/BadSyntaxException';
 
 export default class Service {
 
@@ -20,8 +21,12 @@ export default class Service {
             var data: String = this.converter.toBody(rule)
             this.api.post('/', data);   // TODO - complete path when Back API is ready
 
-        } catch (bse: BadSyntaxException) {
-            throw bse;
+        } catch (bse: unknown) {
+            if (bse instanceof BadSyntaxException) {
+                throw bse;
+            } else {
+                throw new Error("Unexpected error");
+            }
         }
     }
 }
