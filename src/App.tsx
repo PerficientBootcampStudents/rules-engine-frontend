@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import TableCustom from './components/DynamicTable';
+import {columns}  from './components/json';
+import {data}  from './components/json';
 
 function App() {
-  return (
+
+
+
+  const options=columns.map((e:any)=>{
+    return""+e.name
+  })
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <TableCustom
+        title="TEST"
+        options={options}
+        data={data}
+        />
+      
     </div>
   );
 }
