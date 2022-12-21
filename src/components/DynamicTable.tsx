@@ -7,12 +7,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 
-import "./styles.css";
+import "../styles/styles.css";
 
 interface Props {
     options: any;
     data: any;
-    title: string;
 }
 
 
@@ -25,7 +24,7 @@ const renderTable = (item:any, data:any) => {
   
 };
 
-const TableCustom = ({ options, data, title}:Props) => {
+const TableCustom = ({ options, data  }:Props) => {
   return (
     <div className="table_container">
       <div
@@ -36,12 +35,11 @@ const TableCustom = ({ options, data, title}:Props) => {
           alignItems: "center",
         }}
       >
-        <h1 className="h1Tittle"> {title}</h1>
       </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="caption table">
           <TableHead>
-            <TableRow>
+            <TableRow className="columns-table">
               {options &&
                 options.map((item:any) => (
                   <TableCell key={item.id} align="center">

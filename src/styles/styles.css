@@ -1,0 +1,67 @@
+.table_container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    height: 70vh;
+    padding: 10%;
+
+  }
+  
+  
+  .h1Tittle {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 4rem;
+    margin-right: 20px;
+  }
+  
+  .textfield{
+    position: absolute;
+    background-color: #B4B4B4;
+    border-radius: 10px;
+    width: 750px;
+    height: 80px;
+    font-family: Oufit;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: left;
+    border: 0ch;
+  }
+  .content-textfield{
+    vertical-align: middle;
+    position: absolute;
+    left: 7%;
+    border: 0ch;
+  }
+
+  .navbar{
+    background-color: #B4B4B4;
+    height: 90px;
+  }
+
+  .navbar Box{
+    background-color: #000000;
+  }
+  
+  .container-rules h1{
+    padding-left: 7.2%;
+    color: #323232;
+  }
+  
+  .columns-table{
+    background: linear-gradient(#D40200,#9A0B0A);
+    font-style: normal;
+  }
+
+  .button-compare{
+    background: linear-gradient(#D40200,#9A0B0A);
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    color: #ffffff;
+    font-weight: bolder;
+    border: 0ch;
+  }
+
+  
