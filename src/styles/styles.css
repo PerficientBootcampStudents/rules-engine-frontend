@@ -35,13 +35,15 @@
     border: 0ch;
   }
 
-  .navbar{
+  .grid-nav{
     background-color: #B4B4B4;
     height: 90px;
+        
   }
 
-  .navbar Box{
-    background-color: #000000;
+  .navbar{
+    background-color: #666666;
+    height: 40px;
   }
   
   .container-rules h1{

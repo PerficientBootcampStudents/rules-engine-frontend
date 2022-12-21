@@ -1,18 +1,23 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import '../styles/styles.css'
 
 
 const Navbar = () => {
   return (
-    <div>
-        <nav className='navbar'>
-            <svg width="400" height="110">
-                <rect width="500"/>
-            </svg>
-        </nav>
+    <Grid container>
+      <Grid item xs={10} className='grid-nav'>
+         
+      </Grid>
+      <Grid item xs={2} className='grid-nav'> 
+        
+        
 
-    </div>
+      </Grid>
+      <Grid item xs={12} className='navbar'>
+        
+      </Grid>
+    </Grid>
   )
 }
 
