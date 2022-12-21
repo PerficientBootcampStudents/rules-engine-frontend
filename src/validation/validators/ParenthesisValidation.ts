@@ -7,7 +7,7 @@ export default class Parenthesis implements IChecker {
     }
 
     private checkParenthesis(rule: String): boolean {
-        if (this.isRuleBalanced(rule)) {
+        if (!this.isRuleBalanced(rule)) {
             throw new BadSyntaxError(BadSyntaxError.CODE_02.getMessage(), BadSyntaxError.CODE_02.getCode());
         }
         return true;
