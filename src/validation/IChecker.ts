@@ -1,5 +1,3 @@
-import { checkPrime } from "crypto";
-
-export default interface Checker {
-
+export default interface IChecker {
+    validate(rule: String): void;
 }
