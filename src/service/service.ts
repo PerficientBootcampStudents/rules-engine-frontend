@@ -1,32 +1,27 @@
 import Api from '../api/api';
-import Checker from '../validation/Checker';
-import Converter from './Converter';
-import BadSyntaxException from '../error/BadSyntaxException';
+import Validator from '../validation/Validator';
 
 export default class Service {
 
     private api: Api;
-    private checker: Checker;
-    private converter: Converter;
+    private validator: Validator;
 
     constructor() {
         this.api = new Api();
-        this.checker = new Checker();
-        this.converter = new Converter();
+        this.validator = new Validator();
     }
 
     applyRule(rule: String) {
         try{
-            this.checker.validate(rule);
-            var data: String = this.converter.toBody(rule)
-            this.api.post('/', data);   // TODO - complete path when Back API is ready
+            this.validator.validate(rule);
+            var body: any = {
+                "rule": rule
+            };
+            var data: String = JSON.stringify(body);
+            this.api.post('/query', data);   // TODO - complete path when Back API is ready
 
-        } catch (bse: unknown) {
-            if (bse instanceof BadSyntaxException) {
-                throw bse;
-            } else {
-                throw new Error("Unexpected error");
-            }
+        } catch (bse) {
+            throw bse;
         }
     }
 }
