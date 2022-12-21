@@ -1,9 +1,10 @@
+import BadSyntaxError from '../error/BadSyntaxError';
 import IChecker from './IChecker'
 import OperatorsValidation from './validators/OperatorsValidation';
 import ParenthesisValidation from './validators/ParenthesisValidation';
 import SyntaxValidation from './validators/SyntaxValidation';
 
-export default class Checker implements IChecker {
+export default class Validator {
 
     private syntaxValidation: SyntaxValidation;
     private parenthesisValidation: ParenthesisValidation;
@@ -20,9 +21,14 @@ export default class Checker implements IChecker {
 
     public validate(rule: String): void {
         rule = rule.toLowerCase();
-        this.validators.forEach(validator => {
-            validator.validate(rule);
-        });
+        try {
+            this.validators.forEach(validator => {
+                validator.validate(rule);
+            });
+        } catch (bse) {
+            throw bse;
+        }
+        
     }
 
 }
