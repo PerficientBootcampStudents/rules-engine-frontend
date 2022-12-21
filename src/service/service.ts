@@ -1,7 +1,7 @@
 import Api from '../api/api';
 import Checker from '../validation/Checker';
 import Converter from './Converter';
-import BadSyntaxException from '../error/BadSyntaxException';
+import BadSyntaxException from '../error/BadSyntaxError';
 
 export default class Service {
 

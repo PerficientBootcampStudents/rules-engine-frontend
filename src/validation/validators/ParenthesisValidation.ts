@@ -2,14 +2,15 @@ import BadSyntaxError from "../../error/BadSyntaxError";
 import IChecker from "../IChecker";
 
 export default class Parenthesis implements IChecker {
-    public validate(rule: String): void {
+    public validate(rule: String): boolean {
         return this.checkParenthesis(rule);
     }
 
-    private checkParenthesis(rule: String): void {
+    private checkParenthesis(rule: String): boolean {
         if (this.isRuleBalanced(rule)) {
             throw new BadSyntaxError(BadSyntaxError.CODE_02.getMessage(), BadSyntaxError.CODE_02.getCode());
         }
+        return true;
     }
 
     private isRuleBalanced(rule: String): boolean {

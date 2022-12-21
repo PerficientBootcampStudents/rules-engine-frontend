@@ -3,12 +3,12 @@ import IChecker from "../IChecker";
 import { Operators } from "../../constants/Operators";
 
 export default class OperatorsValidation implements IChecker {
-    public validate(rule: String): void {
+    public validate(rule: String): boolean {
         return this.checkOperators(rule);
     }
 
-    private checkOperators(rule: String): void {
-        this.isCorrect(rule);        
+    private checkOperators(rule: String): boolean {
+        return this.isCorrect(rule);        
     }
 
     private isCorrect(rule: String): boolean {
